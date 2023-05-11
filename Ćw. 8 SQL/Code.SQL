@@ -1,6 +1,6 @@
 --ZAD 1
 --Wykorzystujac wyrazenie CTE zbuduj zapytanie, ktore znajdzie informacje na temat stawki pracownika oraz jego danych, 
---a nastepnie zapisze je do tabeli tymczasowej TempEmployeeInfo. Rozwi¹¿ w oparciu o AdventureWorks.
+--a nastepnie zapisze je do tabeli tymczasowej TempEmployeeInfo. RozwiÂ¹Â¿ w oparciu o AdventureWorks.
 
 USE AdventureWorks2019
 
@@ -22,7 +22,7 @@ SELECT * FROM AdventureWorks2019.HumanResources.EmployeePayHistory
 
 
 --ZAD 2
---Uzyskaj informacje na temat przychodow ze sprzedazy wedlug firmy i kontaktu (za pomoc¹ CTE i bazy AdventureWorksL).
+--Uzyskaj informacje na temat przychodow ze sprzedazy wedlug firmy i kontaktu (za pomocÂ¹ CTE i bazy AdventureWorksL).
 
 SELECT *FROM SalesLT.SalesOrderHeader;
 SELECT *FROM SalesLT.Customer;
@@ -40,7 +40,7 @@ AS
 SELECT * FROM moja2
 
 --ZAD 3
---Napisz zapytanie, które zwroci wartosc sprzedazy dla poszczegolnych kategorii produktow. Wykorzystaj CTE i baze AdventureWorksLT.
+--Napisz zapytanie, ktÃ³re zwroci wartosc sprzedazy dla poszczegolnych kategorii produktow. Wykorzystaj CTE i baze AdventureWorksLT.
 
 USE AdventureWorksLT2019
 
