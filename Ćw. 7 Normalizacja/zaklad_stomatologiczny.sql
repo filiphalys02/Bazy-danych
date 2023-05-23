@@ -75,8 +75,7 @@ CONCAT(pa.imie, ' ', pa.nazwisko) AS NazwaPacjenta,
 w.DataGodzinaWizyty,
 w.ID_zabiegu,
 z.NazwaZabiegu
-FROM
-stomatologia.wizyty w
+FROM stomatologia.wizyty w
 JOIN stomatologia.pracownicy p ON w.ID_pracownika = p.ID_pracownika
 JOIN stomatologia.pacjenci pa ON w.ID_pacjenta = pa.ID_pacjenta
 JOIN stomatologia.zabiegi z ON w.ID_zabiegu = z.ID_zabiegu;
