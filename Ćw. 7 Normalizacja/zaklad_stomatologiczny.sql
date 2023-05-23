@@ -38,17 +38,17 @@ ADD FOREIGN KEY (ID_pacjenta) REFERENCES stomatologia.pacjenci(ID_pacjenta)
 ALTER TABLE stomatologia.wizyty
 ADD FOREIGN KEY (ID_pracownika) REFERENCES stomatologia.pracownicy(ID_pracownika)
 
-INSERT INTO stomatologia.pacjenci VALUES ('P100', 'Anna', 'Jeleñ')
-INSERT INTO stomatologia.pacjenci VALUES ('P105', 'Jaros³aw', 'Nicpoñ')
+INSERT INTO stomatologia.pacjenci VALUES ('P100', 'Anna', 'JeleÃ±')
+INSERT INTO stomatologia.pacjenci VALUES ('P105', 'JarosÂ³aw', 'NicpoÃ±')
 INSERT INTO stomatologia.pacjenci VALUES ('P108', 'Joanna', 'Nosek')
-INSERT INTO stomatologia.pacjenci VALUES ('P120', 'Jan', 'Ka³u¿a')
+INSERT INTO stomatologia.pacjenci VALUES ('P120', 'Jan', 'KaÂ³uÂ¿a')
 INSERT INTO stomatologia.pacjenci VALUES ('P130', 'Jerzy', 'Lis')
 INSERT INTO stomatologia.pacjenci VALUES ('P123', 'Olga', 'Nowacka')
 SELECT * FROM stomatologia.pacjenci
 
 INSERT INTO stomatologia.pracownicy VALUES ('S1011', 'Maria', 'Nowak')
 INSERT INTO stomatologia.pracownicy VALUES ('S1024', 'Jan', 'Kowalski')
-INSERT INTO stomatologia.pracownicy VALUES ('S1045', 'Anna', 'Jab³oñska')
+INSERT INTO stomatologia.pracownicy VALUES ('S1045', 'Anna', 'JabÂ³oÃ±ska')
 INSERT INTO stomatologia.pracownicy VALUES ('S1034', 'Marek','Potocki')
 SELECT * FROM stomatologia.pracownicy
 
@@ -68,15 +68,15 @@ SELECT * FROM stomatologia.wizyty
 
 -- wyswietlenie mojej bazy w formie tabeli przed normalizacja
 SELECT
-  p.ID_pracownika,
-  CONCAT(p.imie, ' ', p.nazwisko) AS NazwaLekarza,
-  w.ID_pacjenta,
-  CONCAT(pa.imie, ' ', pa.nazwisko) AS NazwaPacjenta,
-  w.DataGodzinaWizyty,
-  w.ID_zabiegu,
-  z.NazwaZabiegu
+p.ID_pracownika,
+CONCAT(p.imie, ' ', p.nazwisko) AS NazwaLekarza,
+w.ID_pacjenta,
+CONCAT(pa.imie, ' ', pa.nazwisko) AS NazwaPacjenta,
+w.DataGodzinaWizyty,
+w.ID_zabiegu,
+z.NazwaZabiegu
 FROM
-  stomatologia.wizyty w
-  JOIN stomatologia.pracownicy p ON w.ID_pracownika = p.ID_pracownika
-  JOIN stomatologia.pacjenci pa ON w.ID_pacjenta = pa.ID_pacjenta
-  JOIN stomatologia.zabiegi z ON w.ID_zabiegu = z.ID_zabiegu;
+stomatologia.wizyty w
+JOIN stomatologia.pracownicy p ON w.ID_pracownika = p.ID_pracownika
+JOIN stomatologia.pacjenci pa ON w.ID_pacjenta = pa.ID_pacjenta
+JOIN stomatologia.zabiegi z ON w.ID_zabiegu = z.ID_zabiegu;
